@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <meta charset="UTF-8">
+        
+        <title>BarcodeScanner</title>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=no">
+        <style>
+            /* following three (cascaded) are equivalent to above three meta viewport statements */
+            /* see http://www.quirksmode.org/blog/archives/2014/05/html5_dev_conf.html */
+            /* see http://dev.w3.org/csswg/css-device-adapt/ */
+                @-ms-viewport { width: 100vw ; min-zoom: 100% ; zoom: 100% ; }          @viewport { width: 100vw ; min-zoom: 100% zoom: 100% ; }
+                @-ms-viewport { user-zoom: fixed ; min-zoom: 100% ; }                   @viewport { user-zoom: fixed ; min-zoom: 100% ; }
+                /*@-ms-viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }   @viewport { user-zoom: zoom ; min-zoom: 100% ; max-zoom: 200% ; }*/
+        </style>
+
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" class="uib-framework-theme">
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+
+        <!-- Include Angular.js -->
+        <script src="js/angular.min.js"></script>
+        
+        <script src="js/ng-cordova.min.js"></script>
+
+
+        <script src="cordova.js" id="xdkJScordova_"></script>
+
+        <script src="js/app.js"></script>
+        <!-- for your event code, see README and file comments for details -->
+        <script src="js/init-app.js"></script>
+        <!-- for your init code, see README and file comments for details -->
+        <script src="xdk/init-dev.js"></script>
+        <!-- normalizes device and document ready events, see file for details -->
+    </head>
+
+    <body>
+        <div class="container" ng-controller="RootCtrl">
+            
+            <!-- Header -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="text-center"><i class="glyphicon glyphicon-barcode"></i> Barcode scanner</h1>
+                </div>
+            </div>
+            
+            <!-- Controls -->
+             <div class="row">
+                 <div class="col-xs-4">
+                    <button class="btn btn-success" ng-click="scan(false)"><i class="glyphicon glyphicon-camera"></i> Scannen</button>            
+                 </div>
+                 <div class="col-xs-4">
+                    <button class="btn btn-warning" ng-click="scan(true)"><i class="glyphicon glyphicon-repeat"></i> Scannen</button>            
+                 </div>
+                 <div class="col-xs-4">
+                     <button class="btn btn-primary" ng-click="share()"><i class="glyphicon glyphicon-share"></i> E-mail</button>  
+                 </div>
+            </div>
+            
+            <hr />
+            
+            <!-- Item list -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="list-group">
+                      <li class="list-group-item" ng-repeat="item in items">
+                          {{$index+1}}. {{item.name}} <span class="label label-default">{{item.format}}</span><button class="btn btn-xs btn-danger pull-right" ng-click="delete(item)"><i class="glyphicon glyphicon-remove"></i></button>
+                      </li>
+                    </ul>
+                 </div>
+            </div>
+            
+            <!-- Device info -->
+            <div class="row">
+                <div class="col-xs-12">
+                    <hr />
+                    {{device.platform}} {{device.version}} | {{device.model}} | Cordova {{device.cordova}}
+                </div>
+            </div>
+                    
+        </div>
+            
+    </body>
+
+</html>
