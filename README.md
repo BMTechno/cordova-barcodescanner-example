@@ -19,3 +19,5 @@ BarcodeScanner example app using IntelXDK and Apache Cordova
 ## Caveats
 
 * Wifi preview / test connections in IntelXDK are firewall sensitive
+
+![Screenshot](https://raw.githubusercontent.com/stefanvangastel/cordova-barcodescanner-example/master/screenshot.png "Screenshot")
