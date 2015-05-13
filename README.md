@@ -8,7 +8,7 @@ BarcodeScanner example app using IntelXDK and Apache Cordova
 1. Choose "Open existing project"
 1. Select this project
 
-== Resources
+## Resources
 
 * IntelXDK (https://software.intel.com/en-us/html5/tools)
 * Apache Cordova (https://cordova.apache.org)
@@ -16,6 +16,6 @@ BarcodeScanner example app using IntelXDK and Apache Cordova
 * AngularJS (https://angularjs.org)
 * AngularJS Cordova binding (http://ngcordova.com)
 
-== Caveats
+## Caveats
 
 * Wifi preview / test connections in IntelXDK are firewall sensitive
